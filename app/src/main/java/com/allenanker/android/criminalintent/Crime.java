@@ -19,6 +19,7 @@ public class Crime {
     private boolean mSolved;
     private boolean mRequiresPolice;
     private String mSuspect;
+    private long mContactId;
 
     public Crime() {
         this(UUID.randomUUID());
@@ -71,6 +72,22 @@ public class Crime {
 
     public void setSuspect(String suspect) {
         mSuspect = suspect;
+    }
+
+    public long getContactId() {
+        return mContactId;
+    }
+
+    public void setContactId(long contactId) {
+        mContactId = contactId;
+    }
+
+    /**
+     * Get a unique filename based on the crime's id
+     * @return
+     */
+    public String getPhotoFilename() {
+        return "IMG_" + getId().toString() + ".jpg";
     }
 
     public String getDateString() {
